@@ -6,12 +6,13 @@ from math import pow
 Calculate probabilities of a random variable with binomial distribution
 '''
 
-def binomial(k, n, p):
+
+def bineq(k, n, p):
     '''
     input
         k - the number of successes in trials
         n - the number of trials
-        p - the probability of a sucess
+        p - the probability of a success
     returns
         P(X = k)
     '''
@@ -24,12 +25,12 @@ def binomial(k, n, p):
 
 def binlt(k, n, p):
     # P(X < k)
-    return sum(binomial(x, n, p) for x in range(0, k))
+    return sum(bineq(x, n, p) for x in range(0, k))
 
 
 def binle(k, n, p):
     # P(X <= k)
-    return sum(binomial(x, n, p) for x in range(0, k+1))
+    return sum(bineq(x, n, p) for x in range(0, k+1))
 
 
 def bingt(k, n, p):
